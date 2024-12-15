@@ -4,6 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node app.js",
+    "generate-openapi": "node swagger.js",
     "test": "echo \"Skipping tests\""
   },
   "keywords": [],
