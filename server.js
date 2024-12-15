@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const sql = require('mssql');
-const port = 3000;
+const port = 80;
 
 const dbConfig = {
     user: 'mamankAdmin',
@@ -19,7 +19,7 @@ const dbConfig = {
 
 // Inisialisasi Aplikasi Express
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 const swaggerOptions = {
     definition: {
@@ -36,7 +36,7 @@ const swaggerOptions = {
             },
         ],
     },
-    apis: ['./routes/*.js'], // Sesuaikan path file route Anda
+    apis: ['./server.js'], // Sesuaikan path file route Anda
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
